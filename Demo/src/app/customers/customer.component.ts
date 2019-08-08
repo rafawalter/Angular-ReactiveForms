@@ -79,7 +79,11 @@ export class CustomerComponent implements OnInit {
     );
   }
 
-  private buildAddress() {
+  addAddress(): void {
+    this.addresses.push(this.buildAddress());
+  }
+
+  buildAddress() {
     return this.fb.group({
       addressType: 'home',
       street1: '',
